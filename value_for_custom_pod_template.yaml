@@ -141,13 +141,13 @@ astronomer:
                       imagePullPolicy: {{ .Values.images.airflow.pullPolicy }}
                       name: base
                       ports: []
-                      resources:
-                        requests:
-                          memory: 222Mi
-                          cpu: 222m
-                        limits:
-                          memory: 333Mi
-                          cpu: 444m
+                      resources:             # <--- htech7x add this line   
+                        requests:            # 
+                          memory: 222Mi      #
+                          cpu: 222m          #
+                        limits:              #
+                          memory: 333Mi      #
+                          cpu: 444m          # <--- 
                       volumeMounts:
                         - mountPath: {{ template "airflow_logs" . }}
                           name: logs
